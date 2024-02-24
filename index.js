@@ -3,7 +3,8 @@ const axios = require("axios");
 const app = express();
 const app_id = "18507763";
 const app_key = "db6026d3790bc0f5e2d767b9956b94d6";
-app.get("/sweet", async function (req, res) {
+//api.edamam.com/api/recipes/v2?type=public&q=sweet&app_id=18507763&app_key=db6026d3790bc0f5e2d767b9956b94d6
+https: app.get("/sweet", async function (req, res) {
   const url = `https://api.edamam.com/api/recipes/v2?type=public&q=sweet&app_id=${app_id}&app_key=${app_key}`;
   try {
     const data = await axios.get(url);
@@ -42,3 +43,4 @@ app.get("/query/:name", async (req, res) => {
 app.listen(3001, () => {
   console.log("Listening on port 3001");
 });
+module.exports = app;
